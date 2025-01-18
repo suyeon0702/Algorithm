@@ -1,0 +1,11 @@
+score = int(input())
+is_A = (score <= 100 and score >= 90)
+is_B = (score < 90 and score >= 80)
+is_C = (score < 80 and score >= 70)
+is_D = (score < 70 and score >= 60)
+
+if is_A: print("A")
+elif is_B: print("B")
+elif is_C: print("C")
+elif is_D: print("D")
+else: print("F")
