@@ -1,12 +1,6 @@
 while 1:
-    n = input()
-    if n == "0":
-        break
-    
-    list_n = list(n)
-    reverse_n = ''
-    for i in range(len(list_n)):
-        reverse_n += list_n.pop()
+    num = input()
+    if num == "0": break
 
-    if n == reverse_n: print("yes")
+    if num == num[::-1]: print("yes")
     else: print("no")
