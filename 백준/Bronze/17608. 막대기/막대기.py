@@ -1,7 +1,9 @@
+import sys
+
 descending_stack = []
 n = int(input())
-for i in range(n):
-    bar_h = int(input())
+bar_list = [int(sys.stdin.readline().strip()) for _ in range(n)]
+for bar_h in bar_list:
 
     if len(descending_stack) == 0:
         descending_stack.append(bar_h)
