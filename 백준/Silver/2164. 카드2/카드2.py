@@ -1,18 +1,12 @@
 N = int(input())
-
-cards = list(range(1, N+1))
-
-front = 0
-rear = N-1
-
 last = 0
-while front != rear:
-    # first
-    front += 1
-    # second
-    cards.append(cards[front])
-    front += 1
-    rear += 1
+k = 1
+while k*2 <= N:
+    k *= 2
 
-last = cards[front]
+if N == k:
+    last = k
+else:
+    last = 2 * (N-k) 
+
 print(last)
