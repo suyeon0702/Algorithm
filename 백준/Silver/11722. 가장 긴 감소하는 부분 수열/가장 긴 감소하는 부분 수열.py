@@ -1,11 +1,27 @@
 N = int(input())
 A = list(map(int, input().split()))
 
-dp = [1 for _ in range(N)]
+def binary_search(arr, target):
+    left, right = 0, len(arr)
 
-for i in range(1, N):
-    for j in range(i):
-        if A[j] > A[i]:
-            dp[i] = max(dp[i], dp[j]+1)
+    while left < right:
+        mid = (left + right) // 2
 
-print(max(dp))
+        if arr[mid] <= target: # 중간값 <= 목표값
+            right = mid
+        else: # 중간값 > 목표값
+            left = mid + 1
+
+    return left # 최종 위치 반환
+
+sub_A = []
+
+for num in A:
+    pos = binary_search(sub_A, num)
+    
+    if pos < len(sub_A):
+        sub_A[pos] = num
+    else:
+        sub_A.append(num)
+
+print(len(sub_A))
